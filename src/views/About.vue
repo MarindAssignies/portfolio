@@ -43,8 +43,8 @@
       <p class="contact-font">Twitter</p>
       <p class="link"><a href="https://twitter.com/digitalsailor_" target="_blank">@digitalsailor_</a></p>
     </div>
-    <div class="picture">
-      <img :class="{visible: imgVisible}" src="@/assets/img/marin.jpg" alt="It's a picture of me !">
+    <div :class="{visible: imgVisible}" class="picture">
+      <img src="@/assets/img/marin.jpg" alt="It's a picture of me !">
     </div>
   </div>
 </template>
@@ -93,8 +93,12 @@ import Experience from "@/components/Experience.vue";
   .picture{
     top: 5vh;
     height: 800px;
+    display: none;
     @media screen and (max-width: 800px) {
       display: none;
+    }
+    &.visible{
+      display: block;
     }
   }
 
@@ -102,10 +106,6 @@ import Experience from "@/components/Experience.vue";
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0;
-    &.visible{
-      opacity: 1;
-    }
   }
   
   h2{
