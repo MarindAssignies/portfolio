@@ -33,7 +33,7 @@ export default{
     --title-font:'Playfair Display', serif;
     --dark-blue: #33374F;
     --light-blue: #4354C8;
-    --main-bg-color: #FCFAF6;
+    --main-bg-color: #fffbf2;
   }
 
   *,
@@ -71,7 +71,7 @@ export default{
 
   .container{
     padding: 0 10rem;
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) {
       padding: 0 1rem;
     }
   }

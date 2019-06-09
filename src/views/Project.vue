@@ -1,7 +1,7 @@
 <template>
     <div class="project">
         <div class="thumbnail">
-            <img :src="require(`@/assets/img/${project.thumbnail}`)" alt="Image">
+            <img :src="require(`@/assets/img/${project.project_img}`)" alt="Image">
         </div>
         <div class="container">
             <h1>{{project.title}}</h1>
@@ -117,7 +117,7 @@ h1{
     &>div{
         width: 30%;
     }
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 800px){
         flex-wrap: wrap;
         &>div{
             width:100%;
@@ -159,7 +159,7 @@ h1{
     justify-content: flex-end;
     position: relative;
     flex-wrap: wrap;
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 800px){
         justify-content: center;
     }
 }
@@ -173,7 +173,7 @@ h1{
         font-family: var(--title-font);
     }
 
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 800px){
         width: 100%;
     }
 }
@@ -189,7 +189,7 @@ h1{
         object-fit: cover;
         display: block;
     }
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 800px){
         width: 100%;
         position: static;
     }

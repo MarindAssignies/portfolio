@@ -4,7 +4,7 @@
             {
                 "title": "WarpCore Audio",
                 "slug": "warpcore-audio",
-                "thumbnail": "thumbnail-warpcoreaudio.png",
+                "thumbnail": "thumbnail-warpcoreaudio.jpg",
                 "project_img": "project-warpcoreaudio.png",
                 "intro_img": "intro-warpcoreaudio.png",
                 "role": "Project Manager",
@@ -33,11 +33,11 @@
                 "next_project": "so-hetic"
             },
             {
-                "title": "So'HETIC",
+                "title": "So'Hetic",
                 "slug": "so-hetic",
-                "thumbnail": "thumbnail-sohetic.jpg",
+                "thumbnail": "thumbnail-sohetic.png",
                 "project_img": "project-sohetic.png",
-                "intro_img": "intro-sohetic.jpg",
+                "intro_img": "intro-sohetic.png",
                 "role": "Event Manager",
                 "why": "Organizing events that please the students was a real challenge",
                 "when": "2018 - 2019",
@@ -63,7 +63,7 @@
                 "conclusion": {
                     "title": "It was a real challenge",
                     "content": "For a little more than a year we have animated student life, it is difficult to satisfy everyone. With the innovations we brought, we motivated students to take action by creating new associations to enliven school life!",
-                    "img": "outro-sohetic.jpg"
+                    "img": "outro-sohetic.png"
                 },
                 "next_project": "may-i-leave"
             },

@@ -51,7 +51,7 @@ export default {
   display: flex;
   align-items: center;
   position: relative;
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 800px){
      height: auto;
     }
 }
@@ -59,7 +59,7 @@ export default {
 .intro {
   width: 30%;
   margin-right: 12rem;
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 800px){
       width: 100%;
       margin-right: 0;
       margin-bottom: 3rem;
@@ -79,7 +79,7 @@ h2 {
   text-transform: uppercase;
   font-weight: bold;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     svg {
       transform: rotate(90deg);
     }
@@ -90,14 +90,15 @@ h2 {
   width: 35%;
   font-size: 3rem;
   font-family: var(--title-font);
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 800px){
      width: 100%;
      margin-bottom: 3rem;
     }
 }
 
 .projects p{
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1;
 }
 
 a {
@@ -123,7 +124,7 @@ a {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 800px){
      display: none;
     }
 }

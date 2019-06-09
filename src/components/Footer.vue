@@ -1,6 +1,8 @@
 <template>
     <footer class="container">
-        <p>I’m always looking for new opportunities, <a href="mailto:mdassignies@gmail.com">contact me</a> !</p>
+        <div>
+            <p>I’m always looking for new opportunities, <a href="mailto:mdassignies@gmail.com">contact me</a> ! </p>
+        </div>
         <div class="icons">
             <a href="https://twitter.com/digitalsailor_" target="_blank">
                 <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +41,7 @@ footer{
     padding-bottom: 1rem;
     padding-top: 1rem;
     height: 8vh;
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 800px){
         height: auto;
     }
 }
@@ -52,6 +54,7 @@ a{
     color: inherit;
     
 }
+
 
 .icons a {
     margin-left: 1rem;
