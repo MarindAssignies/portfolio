@@ -1,29 +1,22 @@
-# portfolio
+# Portfolio #
 
-## Project setup
-```
-npm install
-```
+# Description
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This is the first version of my portfolio made with Vuejs. You can find all my projects on this website, feel free to contact me for any questions !
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Link
 
-### Run your tests
-```
-npm run test
-```
+https://marindassignies.fr
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Features
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Features of my portfolio :
+
+* Thumbnail of the project on link hover on home page
+* Dynamic contents from json file
+* Dynamic routing 
+
+#### Credits
+
+Design : Hugo Chapelain (https://hugochapelain.fr)
+Code : Marin d'Assignies (thanks to Alphonse Bouy - https://alphonsebouy.fr - for the vuejs formation 
