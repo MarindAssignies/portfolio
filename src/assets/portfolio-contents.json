@@ -1,0 +1,151 @@
+{
+    "projects":
+        [
+            {
+                "title": "WarpCore Audio",
+                "slug": "warpcore-audio",
+                "thumbnail": "thumbnail-warpcoreaudio.png",
+                "project_img": "project-warpcoreaudio.png",
+                "intro_img": "intro-warpcoreaudio.png",
+                "role": "Project Manager",
+                "why": "Our client was very satisfied of our work",
+                "when": "June 2018",
+                "quote": "Creating a website faithfull to the company",
+                "contents": [
+                    {
+                        "title": "Our first website",
+                        "paragraph": "It was our first school project with a real company. We had 2 months to find a company without any website, and create one from scratch including specification, analysis, design, SEO & user’s tests. WarpCore Audio, a Parisian recording studio, trusted us to carry out their first steps on the internet."
+                    },
+                    {
+                        "title": "Keeping the identity of the company",
+                        "paragraph": "The first challenge was to create a website faithful to the company spirit. WarpCore Audio is mostly working with young artists via its FaceBook page. To stay in the mind of the studio, we created a sci-fi design, simple but that matched the target."
+                    },
+                    {
+                        "title": "Adapt to the business models",
+                        "paragraph": "The second challenge was to evaluate the different businesses, B to B and B to C. Artists and companies do not have the same demands and expectations for a music. We separated them by creating two distincts sections where services were better targeted. Studio and customers both save time."
+                    }
+                ],
+                "conclusion": {
+                    "title": "Proud of the team",
+                    "content": "The company was very happy with the result and the way we managed the project. We were happy with our result and our good team work.",
+                    "img": "outro-warpcoreaudio.png"
+                },
+                "next_project": "so-hetic"
+            },
+            {
+                "title": "So'HETIC",
+                "slug": "so-hetic",
+                "thumbnail": "thumbnail-sohetic.jpg",
+                "project_img": "project-sohetic.png",
+                "intro_img": "intro-sohetic.jpg",
+                "role": "Event Manager",
+                "why": "Organizing events that please the students was a real challenge",
+                "when": "2018 - 2019",
+                "quote": "Animating the life of 1300 students ",
+                "contents": [
+                    {
+                        "title": "A new challenge",
+                        "paragraph": "My challenge for my second year at HETIC was to take part in associative life of the school ! That's why I joined the student office. Our mission was to animate the life of the 1300 students with events, contests and more ... I was in charge of events at So'HETIC during one year. Thanks to our team spirit we made a lot of events."
+                    },
+                    {
+                        "title": "A lot of party-planning",
+                        "paragraph": "The most classic mission of the office is to regularly organize parties regularly to celebrate the end of exams or projects. I was in charge of prospecting with event agencies, organizing the parties.  We tried to vary the places to offer a unique atmosphere to each evening, a houseboat for the integration day, a cellar for Halloween and a wooden room for a winter party."
+                    },
+                    {
+                        "title": "A special project",
+                        "paragraph": "Something new ! We created an Advent Contest where all profits were donated to \"Association Petits Princes\". This project was important to us, because for the first time in our lives we were enable to create something that could help others. Throughout the month of December, we gave presents to our students if they help us to raise fund for charity."
+                    },
+                    {
+                        "title": "Last one for the road",
+                        "paragraph": "Our last project before the end of our mandate was to take 80 students during one week on a trip to Prague, Czech Republic. It was the most challenging work. We needed to plan everything : the journey, buses, hostel, administrative documents, visits etc. We looked through several hostels websites, transport companies, clubs before finding those who made this week unforgettable."
+                    }
+                ],
+                "conclusion": {
+                    "title": "It was a real challenge",
+                    "content": "For a little more than a year we have animated student life, it is difficult to satisfy everyone. With the innovations we brought, we motivated students to take action by creating new associations to enliven school life!",
+                    "img": "outro-sohetic.jpg"
+                },
+                "next_project": "may-i-leave"
+            },
+            {
+                "title": "May I Leave ?",
+                "slug": "may-i-leave",
+                "thumbnail": "thumbnail-mayileave.png",
+                "project_img": "project-mayileave.png",
+                "intro_img": "intro-mayileave.png",
+                "role": "Product Owner",
+                "why": "Challenging our team on a unknown subject",
+                "when": "December 2018",
+                "quote": "An immersive experience to understand the BREXIT",
+                "contents": [
+                    {
+                        "title": "Human & Economy",
+                        "paragraph": "This project was a school team work challenge which lasted for 10 intensive days. We had to create a digital tool to answer the subject \"Human & Economy\". We chose a topic everyone has heard about but no one really understands : \"BREXIT\", more precisely economic issues that such a situation will create. This is an immersive experience to understand and adapt the BREXIT issues to European countries."
+                    },
+                    {
+                        "title": "Research research",
+                        "paragraph": "We studied a lot of financial experts’ forecasts and we adapted the data according to the country. The main objective of this experiment was to determine if according to your answers, you think that it is necessary to leave the European Union or not."
+                    },
+                    {
+                        "title": "Pro Brexit or not ?",
+                        "paragraph": "To create unique experience, we asked specific questions to users. With their results we determined if they were pro or anti BREXIT for their own country. They could see the percentages of people thinking like them and see more details for each question. We added a \"gaming function\" with the choice to play with your mobile phone."
+                    }
+                ],
+                "conclusion": {
+                    "title": "Learn by playing",
+                    "content": "The main objective was to produce a unique experience, but beyond that, we developed our knowledge on the subject and brought a simpler and personal view of the subject to the users.",
+                    "img": "outro-mayileave.jpg"
+                },
+                "next_project": "alpha-composite"
+            },
+            {
+                "title": "Alpha Composite",
+                "slug": "alpha-composite",
+                "thumbnail": "thumbnail-alphacomposite.jpg",
+                "project_img": "project-alphacomposite.jpg",
+                "intro_img": "intro-alphacomposite.jpg",
+                "role": "Marketing Assistant",
+                "why": "First steps in the professional world",
+                "when": "2016 - 2018",
+                "quote": "Meeting customers to advise them and make sells",
+                "contents": [
+                    {
+                        "title": "Boat shows from Paris to La Rochelle",
+                        "paragraph": "Before studying at HETIC, I started out as a marketing assistant for Marine Composite, a shipyard based in Brittany. I had the opportunity to work with their team on boat shows, such as Paris or La Rochelle but also within the company to deliver the products to customers or to make outdoor demonstrations."
+                    },
+                    {
+                        "title": "Animating the exhibiton stands",
+                        "paragraph": "My main mission was to meet our customers at boat shows of Paris to advise them and then to sell our products. During these shows, I established contracts, held appointments, prepared interviews, everything needed to make an exhibition stand live! I have gained confidence and improvisation to adapt to the needs of the moment."
+                    },
+                    {
+                        "title": "Deliveries Management",
+                        "paragraph": "I also worked within the company in Brittany. I was often called to demonstrate our products to future customers, but also to deliver the boats throughout France. Thanks to my passion for sailing, I could master a demonstration at sea while answering their questions. This helped me to adapt according to the situations and the people. I also managed boat deliveries and returns afterwards to keep the customer satisfied. I had to plan the trip, the needs on place and the technical aspects."
+                    }
+                ],
+                "conclusion": {
+                    "title": "How I grew up",
+                    "content": "I made my debut in a professional world very different from the one in which I am currently evolving. However, I learned many things, such as craftsmanship or customer relationship in the field that the school can not teach you.",
+                    "img": "outro-alphacomposite.jpg"
+                },
+                "next_project": "warpcore-audio"
+            }
+        ],
+    "experiences":
+        [
+            {
+                "dates": "2019 - now",
+                "title": "Freelance",
+                "description": "Paris"
+            },
+            {
+                "dates": "2018 - 2019",
+                "title": "So'HETIC",
+                "description": "Event Manager Paris"
+            },
+            {
+                "dates": "2015-2018",
+                "title": "Marine Composite",
+                "description": "Commercial Agent Vannes"
+            }
+        ]
+}

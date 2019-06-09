@@ -1,0 +1,215 @@
+<template>
+    <div class="project">
+        <div class="thumbnail">
+            <img :src="require(`@/assets/img/${project.thumbnail}`)" alt="Image">
+        </div>
+        <div class="container">
+            <h1>{{project.title}}</h1>
+            <div class="intro">
+                <div>
+                    <p class="line-before blue intro-title">Role</p>
+                    <p>{{project.role}}</p>
+                </div>
+                <div>
+                    <p class="line-before blue intro-title">Why I enjoyed it</p>
+                    <p>{{project.why}}</p>
+                </div>
+                <div>
+                    <p class="line-before blue intro-title">When</p>
+                    <p>{{project.when}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container">
+                <p class="quote">« {{project.quote}} »</p>
+                <div class="content-intro-img">
+                    <img :src="require(`@/assets/img/${project.intro_img}`)" alt="jh,g">
+                </div>
+                <div class="content-description">
+                    <Description v-for="_content in project.contents" :key="_content.id" :title="_content.title" :paragraph="_content.paragraph" />
+                </div>
+                <div class="conclusion">
+                    <div class="conclusion-img">
+                        <img :src="require(`@/assets/img/${project.conclusion.img}`)" alt="">
+                    </div>
+                    <div class="conclusion-text">
+                        <h3>{{project.conclusion.title}}</h3>
+                        <p>
+                            {{project.conclusion.content}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="outro">
+            <div class="container">
+                <div class="flex-container">
+                    <router-link :to="`/projects/${project.next_project}`">
+                        <p>See the next project <svg width="27" height="13" viewBox="0 0 27 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25 6.5H1" stroke="#33374F" stroke-width="2" stroke-linecap="square" />
+                                <path d="M25.3676 6.71021L19.0288 12" stroke="#33374F" stroke-width="2" />
+                                <path d="M25.3676 6.28979L19.0288 0.999986" stroke="#33374F" stroke-width="2" />
+                            </svg></p>
+                    </router-link>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import Description from "@/components/Description.vue"
+
+export default {
+    name: 'Project',
+    components: {
+        Description,
+    },
+    data () {
+        return {
+            project: this.$parent.portfolio_contents.projects.filter(
+                _project => _project.slug == this.$route.params.slug
+            )[0]
+        }
+    },
+    watch: {
+        '$route' (to, from){
+            this.project = this.$parent.portfolio_contents.projects.filter(
+                    _project => _project.slug == this.$route.params.slug
+                )[0]
+        }
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+
+.thumbnail{
+    width: 100%;
+    height: 400px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+h1{
+    font-family: var(--title-font);
+    font-size: 3rem;
+    color: var(--dark-blue);
+    margin-bottom: 4rem;
+}
+
+.intro-title{
+    text-transform: uppercase;
+    color: var(--light-blue);
+    font-weight: bold;
+}
+
+.intro{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    &>div{
+        width: 30%;
+    }
+    @media screen and (max-width: 600px){
+        flex-wrap: wrap;
+        &>div{
+            width:100%;
+            margin-bottom: 1rem;
+        }   
+    }
+}
+
+.content{
+    background-color: white;
+    padding: 4rem 0;
+}
+
+.content-intro-img{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 6rem;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.quote{
+    margin-bottom: 5rem;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+
+.content-description{
+    margin-bottom: 7rem;
+}
+
+.conclusion{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    flex-wrap: wrap;
+    @media screen and (max-width: 600px){
+        justify-content: center;
+    }
+}
+
+.conclusion-text {
+    width: 60%;
+
+    h3 {
+        font-size: 2rem;
+        color: var(--light-blue);
+        font-family: var(--title-font);
+    }
+
+    @media screen and (max-width: 600px){
+        width: 100%;
+    }
+}
+
+.conclusion-img{
+    width: 30%;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    @media screen and (max-width: 600px){
+        width: 100%;
+        position: static;
+    }
+}
+
+.outro{
+    background-color: var(--main-bg-color);
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: flex-end;
+    a{
+        display: block;
+        text-decoration: none;
+        color: var(--dark-blue);
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+</style>
