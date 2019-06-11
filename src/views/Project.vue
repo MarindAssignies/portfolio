@@ -7,15 +7,15 @@
             <h1>{{project.title}}</h1>
             <div class="intro">
                 <div>
-                    <p class="line-before blue intro-title">Role</p>
+                    <p class="line-before blue intro-title">👨‍💼 Role</p>
                     <p>{{project.role}}</p>
                 </div>
                 <div>
-                    <p class="line-before blue intro-title">Why I enjoyed it</p>
+                    <p class="line-before blue intro-title">❤️ Why I enjoyed it</p>
                     <p>{{project.why}}</p>
                 </div>
                 <div>
-                    <p class="line-before blue intro-title">When</p>
+                    <p class="line-before blue intro-title">📆 When</p>
                     <p>{{project.when}}</p>
                 </div>
             </div>

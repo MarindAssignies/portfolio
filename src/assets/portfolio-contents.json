@@ -27,7 +27,7 @@
                 ],
                 "conclusion": {
                     "title": "Proud of the team",
-                    "content": "The company was very happy with the result and the way we managed the project. We were happy with our result and our good team work.",
+                    "content": "The company was very happy with the result and the way we managed the project. We were happy with our result and our good team work. It was our first challenge together and as everyone, it scared us but thanks to our team spirit we reach our objective.",
                     "img": "outro-warpcoreaudio.png"
                 },
                 "next_project": "so-hetic"
@@ -135,17 +135,17 @@
             {
                 "dates": "2019 - now",
                 "title": "Freelance",
-                "description": "Paris"
+                "description": "Marketing and management - Paris"
             },
             {
                 "dates": "2018 - 2019",
                 "title": "So'HETIC",
-                "description": "Event Manager Paris"
+                "description": "Event Manager - Paris"
             },
             {
                 "dates": "2015-2018",
                 "title": "Marine Composite",
-                "description": "Commercial Agent Vannes"
+                "description": "Commercial Agent - Vannes"
             }
         ]
 }

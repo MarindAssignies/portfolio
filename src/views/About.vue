@@ -4,9 +4,9 @@
     <div class="intro">
       <div class="container">
         <h2>Hey you !</h2>
-        <p class="line-before blue intro-title">How do you do ?</p>
+        <p class="line-before blue intro-title">How do you do ? 🤝</p>
         <p>My name is <span class="name" @mouseover="imgVisible = true" @mouseleave="imgVisible = false">Marin d'Assignies</span>, I study digital marketing, web development & design at HETIC, in Paris. </p>
-        <p>I'm soooo in love with ocean and sailing ⛵. I feel the same freedom when I sail as in the digital world, we
+        <p>I'm soooo in love with ocean and sailing ⛵ I feel the same freedom when I sail as in the digital world, we
           create our own journey. I also love team sports, I played midfielder in a football team for almost 5 years.
           That's why I love working in team, especially with friendly people.
           I love to travel around the world and discover more, I'm always looking for new challenges ! </p>
@@ -23,7 +23,7 @@
     <div class="freelance">
       <div class="container">
         <h2>Wow, I'm a freelancer !</h2>
-        <p class="line-before blue intro-title">Hire me</p>
+        <p class="line-before blue intro-title">Hire me 👔</p>
         <p>With skills learnt in school and my past experiences, I can help on your project. If you are looking for
           someone to assist you on your marketing or communication work or someone to manage part of your projects, I'm
           the one ! Feel free to contact me when you want !</p>
