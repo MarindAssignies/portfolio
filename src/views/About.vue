@@ -27,7 +27,9 @@
         <p>With skills learnt in school and my past experiences, I can help on your project. If you are looking for
           someone to assist you on your marketing or communication work or someone to manage part of your projects, I'm
           the one ! Feel free to contact me when you want !</p>
-          <p class="credit">By the way, this portfolio was designed by <a href="https://hugochapelain.fr" target="_blank">Hugo 🔥</a></p>
+          <p class="credit">
+            By the way, this portfolio was designed by <a href="https://hugochapelain.fr" target="_blank">Hugo 🔥</a> and animated by <a href="https://alphonsebouy.fr" target="_blank">Alphonse ✨</a>
+          </p> 
       </div>
     </div>
     <div class="contact">
