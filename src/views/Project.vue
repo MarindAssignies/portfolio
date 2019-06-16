@@ -86,6 +86,14 @@ export default {
 
 <style lang="scss" scoped>
 
+a svg{
+    transition: transform 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+a:hover svg{
+    transform: translateX(15px);
+}
+
 .thumbnail{
     width: 100%;
     height: 400px;

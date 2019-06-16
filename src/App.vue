@@ -68,6 +68,18 @@ export default{
       background-color:#4354C8;
     }
   }
+  
+  a>p.line-before{
+    &::before{
+      transition: width .3s cubic-bezier(0.47, 0, 0.745, 0.715);
+    }
+    &:hover{
+      &::before{
+        width: 100%;
+      }
+    }
+  }
+  
 
   .container{
     padding: 0 10rem;

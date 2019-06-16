@@ -16,17 +16,22 @@
             </svg></p>
         </div>
         <div class="projects">
-          <router-link v-for="_project in projects" :key="_project.id" :to="`/projects/${_project.slug}`">
-            <p @mouseover="thumbnail_src = _project.thumbnail">{{ _project.title }}</p>
+          <router-link v-for="(_project, index) in projects" :key="_project.id" :to="`/projects/${_project.slug}`">
+            <p @mouseleave="_event => handleTitleLeave(_event)" @mouseover="_event => handleTitleHover(index, _project.thumbnail, _project.slug, _event)" :class="{'focused': index === focusedIndex }">{{ _project.title }}</p>
           </router-link>
         </div>
       </div>
     </div>
-    <img class="project-img" :src="require(`@/assets/img/${thumbnail_src}`)" alt="project-img">
+    <router-link :to="`projects/${project_slug}`">
+      <div class="project-img-container">
+        <img ref="projectImg" class="project-img" :src="require(`@/assets/img/${thumbnail_src}`)" alt="project-img">
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
+import { clearInterval } from 'timers';
 // @ is an alias to /src
 
 export default {
@@ -34,12 +39,51 @@ export default {
   data () {
     return {
       projects: this.$parent.portfolio_contents.projects,
-      thumbnail_src: ''
+      thumbnail_src: '',
+      project_slug: '',
+      focusedIndex: 0,
+      interval: null
     }
   },
-  mounted () {
+  methods: {
+    handleTitleHover(_index, _thumbnail, _slug, _event){
+      this.thumbnail_src = _thumbnail
+      this.project_slug = _slug
+      window.clearInterval(this.interval)
+      this.focusedIndex = _index
+      _event.target.style.transform = 'translateX(15px)'
+      this.$refs.projectImg.parentNode.style.width = '300px';
+    },
+    handleTitleLeave(_event){
+      this.launchInterval()
+      _event.target.style.transform = 'translateX(0)'
+      this.$refs.projectImg.parentNode.style.width = '250px'
+    },
+    launchInterval(){
+      this.interval = window.setInterval(() => {
+        this.$refs.projectImg.style.opacity = 0
+        setTimeout(() => {
+          ++this.focusedIndex > (this.projects.length - 1) ? this.focusedIndex = 0 : null
+          this.project_slug = this.projects[this.focusedIndex].slug
+          this.thumbnail_src = this.projects[this.focusedIndex].thumbnail
+          this.$refs.projectImg.addEventListener('load', ()=>{
+            this.$refs.projectImg.style.opacity = 1
+          })
+        }, 800);
+      }, 7000); 
+    }
+  },
+  beforeMount () {
     this.thumbnail_src = this.projects[0].thumbnail
-  }
+    if (window.width > 800) {
+      this.project_slug = this.projects[0].slug
+    }
+  },
+  mounted() {
+    if (window.width > 800) {
+      this.launchInterval()
+    }
+  },
 
 }
 </script>
@@ -78,6 +122,12 @@ h2 {
   margin-top: 3rem;
   text-transform: uppercase;
   font-weight: bold;
+  svg{
+    transition: transform 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+  }
+  &:hover svg{
+    transform: translateX(15px);
+  }
 
   @media screen and (max-width: 800px) {
     svg {
@@ -99,6 +149,7 @@ h2 {
 .projects p{
   margin-bottom: 2rem;
   line-height: 1;
+  transition: transform .3s;
 }
 
 a {
@@ -106,8 +157,14 @@ a {
   color: var(--dark-blue);
 }
 
-.projects p:hover {
+.projects p:hover, .projects p.focused {
   color: var(--light-blue);
+}
+
+@media screen and (max-width: 800px){
+  .projects p.focused{
+    color: var(--dark-blue);
+  }
 }
 
 .flex-container{
@@ -116,14 +173,27 @@ a {
   flex-wrap: wrap;
 }
 
-.project-img{
+.project-img-container{
   position: absolute;
   width: 250px;
   height: 70%;
-  object-fit: cover;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
+  overflow: hidden;
+  transform-origin: right;
+  transition: width .4s;
+}
+
+.project-img{
+  position: absolute;
+  top: 0;
+  right: -50px;
+  width: 350px;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: opacity .7s;
   @media screen and (max-width: 800px){
      display: none;
     }

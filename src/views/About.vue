@@ -95,7 +95,7 @@ import Experience from "@/components/Experience.vue";
     height: 800px;
     display: none;
     @media screen and (max-width: 800px) {
-      display: none;
+      position: absolute;
     }
     &.visible{
       display: block;
