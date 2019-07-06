@@ -276,6 +276,9 @@ a {
   transform-origin: right;
   transition: width .4s;
   opacity: 1!important;
+  @media screen and (max-width: 800px){
+     display: none;
+    }
 }
 
 .project-hero {
