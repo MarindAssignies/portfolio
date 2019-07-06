@@ -290,6 +290,9 @@ a {
     height: 100%;
     object-fit: cover;
   }
+  @media screen and (max-width: 800px){
+     display: none;
+    }
 }
 
 .project-img{
