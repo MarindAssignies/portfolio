@@ -20,13 +20,13 @@
                 </div>
             </div>
         </div>
-        <div class="content fade-leave">
+        <div class="content">
             <div class="container">
-                <p class="quote">« {{project.quote}} »</p>
-                <div class="content-intro-img">
+                <p class="quote fade-leave">« {{project.quote}} »</p>
+                <div class="content-intro-img fade-leave">
                     <img :src="require(`@/assets/img/${project.intro_img}`)" alt="jh,g">
                 </div>
-                <div class="content-description">
+                <div class="content-description fade-leave">
                     <Description v-for="_content in project.contents" :key="_content.id" :title="_content.title" :paragraph="_content.paragraph" />
                 </div>
                 <div class="conclusion">
@@ -296,6 +296,7 @@ h1{
     height: 400px;
     position: absolute;
     left: 0;
+    z-index: 10;
     img{
         width: 100%;
         height: 100%;
