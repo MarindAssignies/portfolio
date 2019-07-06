@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import * as GSAP from 'gsap'
+
 import Header from "@/components/Header.vue"
 import Footer from "@/components/Footer.vue"
 
@@ -35,6 +37,10 @@ export default{
     --light-blue: #4354C8;
     --main-bg-color: #fffbf2;
   }
+  
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 
   *,
   *::before,
@@ -46,6 +52,7 @@ export default{
     margin: 0;
     font-family: var(--main-font);
     background-color: var(--main-bg-color);
+    overflow-x: hidden;
     p{
       margin-top: 0;
     }

@@ -30,7 +30,10 @@
                     "content": "The company was very happy with the result and the way we managed the project. We were happy with our result and our good team work. It was our first challenge together and as everyone, it scared us but thanks to our team spirit we reach our objective.",
                     "img": "outro-warpcoreaudio.png"
                 },
-                "next_project": "so-hetic"
+                "next_project": {
+                    "slug": "so-hetic",
+                    "thumbnail": "project-sohetic.png"
+                }
             },
             {
                 "title": "So'Hetic",
@@ -65,7 +68,10 @@
                     "content": "For a little more than a year we have animated student life, it is difficult to satisfy everyone. With the innovations we brought, we motivated students to take action by creating new associations to enliven school life!",
                     "img": "outro-sohetic.png"
                 },
-                "next_project": "may-i-leave"
+                "next_project": {
+                    "slug": "may-i-leave",
+                    "thumbnail": "project-mayileave.png"
+                }
             },
             {
                 "title": "May I Leave ?",
@@ -96,7 +102,10 @@
                     "content": "The main objective was to produce a unique experience, but beyond that, we developed our knowledge on the subject and brought a simpler and personal view of the subject to the users.",
                     "img": "outro-mayileave.jpg"
                 },
-                "next_project": "alpha-composite"
+                "next_project": {
+                    "slug": "alpha-composite",
+                    "thumbnail": "project-alphacomposite.jpg"
+                }
             },
             {
                 "title": "Alpha Composite",
@@ -127,7 +136,10 @@
                     "content": "I made my debut in a professional world very different from the one in which I am currently evolving. However, I learned many things, such as craftsmanship or customer relationship in the field that the school can not teach you.",
                     "img": "outro-alphacomposite.jpg"
                 },
-                "next_project": "warpcore-audio"
+                "next_project": {
+                    "slug": "warpcore-audio",
+                    "thumbnail": "project-warpcoreaudio.png"
+                }
             }
         ],
     "experiences":

@@ -3,9 +3,9 @@
         <div class="thumbnail">
             <img :src="require(`@/assets/img/${project.project_img}`)" alt="Image">
         </div>
-        <div class="container">
-            <h1>{{project.title}}</h1>
-            <div class="intro">
+        <div class="container fade-leave">
+            <h1 ref="title">{{project.title}}</h1>
+            <div class="intro" ref="intro">
                 <div>
                     <p class="line-before blue intro-title">👨‍💼 Role</p>
                     <p>{{project.role}}</p>
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="content">
+        <div class="content fade-leave">
             <div class="container">
                 <p class="quote">« {{project.quote}} »</p>
                 <div class="content-intro-img">
@@ -42,10 +42,10 @@
                 </div>
             </div>
         </div>
-        <div class="outro">
+        <div class="outro fade-leave">
             <div class="container">
                 <div class="flex-container">
-                    <router-link :to="`/projects/${project.next_project}`">
+                    <router-link :to="`/projects/${project.next_project.slug}`">
                         <p>See the next project <svg width="27" height="13" viewBox="0 0 27 13" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M25 6.5H1" stroke="#33374F" stroke-width="2" stroke-linecap="square" />
@@ -61,6 +61,7 @@
 
 <script>
 import Description from "@/components/Description.vue"
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 
 export default {
     name: 'Project',
@@ -80,6 +81,95 @@ export default {
                     _project => _project.slug == this.$route.params.slug
                 )[0]
         }
+    },
+    beforeMount() {
+        // Tweenmax.set(this.$refs.title, { opacity: 0 })
+        // Tweenmax.set(this.$refs.intro_part, { opacity: 0 })
+    },
+    mounted() {
+        const tl = new TimelineMax()
+        tl
+            .from(this.$refs.title, 0.6, {
+                y: "+=200",
+                opacity: 0,
+                ease: Power3.easeOut
+            })
+            .staggerFrom(this.$refs.intro.querySelectorAll('div'), 0.6, {
+                y: "+=200",
+                opacity: 0,
+                ease: Power3.easeOut
+            }, 0.2, "-=0.3")
+    },
+    beforeDestroy() {
+        TweenMax.killAll()
+    },
+    beforeRouteLeave (to, from, next) {
+        if (to.name !== 'project') {
+            const tl = new TimelineMax({ onComplete: () => {
+                next()
+            }})
+            tl
+                .to('.fade-leave', 0.8, {
+                    yPercent: 10,
+                    opacity: 0,
+                    ease: Power3.easeOut
+                })
+                .to('.thumbnail', 0.8, {
+                    xPercent: -100,
+                    opacity: 0,
+                    ease: Power3.easeOut
+                }, "-=0.4")
+            
+        }
+    },
+    updated() {
+        const tl = new TimelineMax({ delay: 0.2 })
+        tl
+            .to('.thumbnail', 0.8, {
+                xPercent: 0,
+                opacity: 1,
+                ease: Power3.easeOut
+            })
+            .to('.fade-leave', 0.8, {
+                yPercent: 0,
+                opacity: 1,
+                ease: Power3.easeOut
+            })
+            .fromTo(this.$refs.title, 0.6, {
+                y: "+=200",
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                ease: Power3.easeOut
+            }, "-=0.8")
+            .staggerFromTo(this.$refs.intro.querySelectorAll('div'), 0.6, {
+                y: "+=200",
+                opacity: 0,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                ease: Power3.easeOut
+            }, 0.2, "-=0.3")
+    },
+    beforeRouteUpdate(to, from, next) {
+        const tl = new TimelineMax({ onComplete: () => {
+                next()
+            }})
+        tl
+            .to(window, 1, {scrollTo: 0})
+            .to('.fade-leave', 0.8, {
+                yPercent: 10,
+                opacity: 0,
+                ease: Power3.easeOut
+            })
+            .to('.thumbnail', 0.8, {
+                xPercent: -100,
+                opacity: 0,
+                ease: Power3.easeOut
+            }, "-=0.4")
     }
 }
 </script>
@@ -90,13 +180,26 @@ a svg{
     transition: transform 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
-a:hover svg{
-    transform: translateX(15px);
+a p {
+    padding: 5px 0;
+    padding-right: 19px;
+    display: block;
+    position: relative;
+    z-index: 10;
+    background-color: var(--main-bg-color);
 }
+
+a:hover {
+    
+    svg{
+        transform: translateX(15px);
+    }
+}
+
 
 .thumbnail{
     width: 100%;
-    height: 400px;
+    height: calc(0.7 * 75vh);
     img{
         width: 100%;
         height: 100%;
@@ -207,6 +310,16 @@ h1{
     background-color: var(--main-bg-color);
     padding-top: 5rem;
     padding-bottom: 6rem;
+    position: relative;
+    .next-project-thumbnail {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        height: 100%;
+        width: 100vw;
+        object-fit: cover;
+        transition: transform 0.2s;
+    }
 }
 
 .flex-container{

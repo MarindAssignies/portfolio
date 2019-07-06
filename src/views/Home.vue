@@ -1,14 +1,14 @@
 <template>
   <div class="home">
-    <div class="container">
+    <div class="container fade-on-leave">
       <div class="flex-container">
         <div class="intro">
-          <h2 class="line-before blue">Hello there</h2>
-          <p>I'm Marin, a 21 years old french product owner studying at HETIC in Paris, always focused on work. I feel
+          <h2 class="line-before blue translate-in">Hello there</h2>
+          <p class="translate-in">I'm Marin, a 21 years old french product owner studying at HETIC in Paris, always focused on work. I feel
             happy
             when my teammates are proud of our creations. 😊</p>
-          <p>I'm also working in Freelance, I can help you handle your projects, feel free to contact me !</p>
-          <p class="incentive">Take a look at my projects <svg width="27" height="13" viewBox="0 0 27 13" fill="none"
+          <p class="translate-in">I'm also working in Freelance, I can help you handle your projects, feel free to contact me !</p>
+          <p class="incentive translate-in">Take a look at my projects <svg width="27" height="13" viewBox="0 0 27 13" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path d="M25 6.5H1" stroke="#33374F" stroke-width="2" stroke-linecap="square" />
               <path d="M25.3676 6.71021L19.0288 12" stroke="#33374F" stroke-width="2" />
@@ -17,21 +17,25 @@
         </div>
         <div class="projects">
           <router-link v-for="(_project, index) in projects" :key="_project.id" :to="`/projects/${_project.slug}`">
-            <p @mouseleave="_event => handleTitleLeave(_event)" @mouseover="_event => handleTitleHover(index, _project.thumbnail, _project.slug, _event)" :class="{'focused': index === focusedIndex }">{{ _project.title }}</p>
+            <p @mouseleave="_event => handleTitleLeave(_event)" @mouseover="_event => handleTitleHover(index, _project.project_img, _project.thumbnail, _project.slug, _event)" :class="{'focused': index === focusedIndex }">
+              <span ref="projectTitle">{{ _project.title }}</span>
+            </p>
           </router-link>
         </div>
       </div>
     </div>
     <router-link :to="`projects/${project_slug}`">
-      <div class="project-img-container">
+      <div class="project-img-container" ref="projectImgContainer">
         <img ref="projectImg" class="project-img" :src="require(`@/assets/img/${thumbnail_src}`)" alt="project-img">
+      </div>
+      <div class="project-hero" ref="projectHero">
+        <img :src="require(`@/assets/img/${hero_src}`)" alt="">
       </div>
     </router-link>
   </div>
 </template>
 
 <script>
-import { clearInterval } from 'timers';
 // @ is an alias to /src
 
 export default {
@@ -40,23 +44,26 @@ export default {
     return {
       projects: this.$parent.portfolio_contents.projects,
       thumbnail_src: '',
+      hero_src: '',
       project_slug: '',
       focusedIndex: 0,
-      interval: null
+      interval: null,
+      routeLeaving: false
     }
   },
   methods: {
-    handleTitleHover(_index, _thumbnail, _slug, _event){
+    handleTitleHover(_index, _hero, _thumbnail, _slug, _event){
       this.thumbnail_src = _thumbnail
+      this.hero_src = _hero
       this.project_slug = _slug
       window.clearInterval(this.interval)
       this.focusedIndex = _index
-      _event.target.style.transform = 'translateX(15px)'
+      // _event.target.parentNode.style.transform = 'translateX(15px)'
       this.$refs.projectImg.parentNode.style.width = '300px';
     },
     handleTitleLeave(_event){
       this.launchInterval()
-      _event.target.style.transform = 'translateX(0)'
+      // _event.target.style.transform = 'translateX(0)'
       this.$refs.projectImg.parentNode.style.width = '250px'
     },
     launchInterval(){
@@ -75,6 +82,7 @@ export default {
   },
   beforeMount () {
     this.thumbnail_src = this.projects[0].thumbnail
+    this.hero_src = this.projects[0].project_img
     if (window.width > 800) {
       this.project_slug = this.projects[0].slug
     }
@@ -83,7 +91,76 @@ export default {
     if (window.width > 800) {
       this.launchInterval()
     }
+    const tl = new TimelineMax()
+    tl
+      .staggerFrom(".translate-in", 1, {
+        y: 100,
+        opacity: 0,
+        ease: Power3.easeOut
+      }, 0.1)
+      .from(this.$refs.projectTitle, 1, {
+        y: 100,
+        ease: Power3.easeOut,
+      }, "-=0.7")
+      .from(this.$refs.projectImgContainer, 1, {
+        x: 300,
+        ease: Power3.easeOut 
+      }, "-=0.7")
   },
+  
+  beforeDestroy() {
+    window.clearInterval(this.interval)
+    TweenMax.killAll()
+  },
+  
+  beforeRouteLeave (to, from, next) {
+    if (to.name === 'project') {
+      const tl = new TimelineMax({ onComplete: () => {
+        next()
+      }})
+      
+      tl
+        .to(this.$refs.projectImgContainer, 1, {
+          x: "-=100vw",
+          ease: Power2.easeOut,
+        })
+        .to(this.$refs.projectHero, 1, {
+          x: "-=100vw",
+          ease: Power2.easeOut
+        }, "-=1")
+        .to(".fade-on-leave", 0.3, { opacity: 0 })
+        .to(this.$refs.projectHero, 0.2, {
+          y: "-=11.25vh",
+          ease: Power2.easeOut
+        }, "-=0.2")
+        .to(this.$refs.projectHero, 0.1, {
+          scaleY: 1.15,
+          transformOrigin: "50% top"
+        }, "-=0.2")
+        .to(this.$refs.projectHero, 0.1, {
+          scaleY: 1,
+          transformOrigin: "50% top"
+        })
+    }
+    else{
+      const tl = new TimelineMax({ onComplete: () => {
+        next()
+      }})
+    tl
+      .to(this.$refs.projectImgContainer, 1, {
+        x: 300,
+        ease: Power3.easeOut 
+      })
+      .to('.fade-on-leave', 1, {
+        y: 300,
+        opacity: 0,
+        ease: Power3.easeOut
+      }, "-=0.6")
+    }
+      // .set(this.$refs.projectImgContainer, {
+      // })
+    
+  }
 
 }
 </script>
@@ -98,6 +175,12 @@ export default {
   @media screen and (max-width: 800px){
      height: auto;
     }
+}
+
+.home.route-leaving {
+  * {
+    opacity: 0;
+  }
 }
 
 .intro {
@@ -150,6 +233,14 @@ h2 {
   margin-bottom: 2rem;
   line-height: 1;
   transition: transform .3s;
+  overflow: hidden;
+  &:hover {
+    transform: translateX(15px);
+  }
+  span{
+    padding: 5px 0;
+    display: block;
+  }
 }
 
 a {
@@ -178,11 +269,27 @@ a {
   width: 250px;
   height: 70%;
   top: 50%;
-  right: 0;
   transform: translateY(-50%);
+  right: 0;
   overflow: hidden;
   transform-origin: right;
   transition: width .4s;
+  opacity: 1!important;
+}
+
+.project-hero {
+  opacity: 1!important;
+  position: absolute;
+  width: 100vw;
+  height: 70%;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .project-img{
