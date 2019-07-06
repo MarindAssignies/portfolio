@@ -63,6 +63,8 @@
 import Description from "@/components/Description.vue"
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 
+const plugins = [ScrollToPlugin]
+
 export default {
     name: 'Project',
     components: {
