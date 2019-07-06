@@ -246,6 +246,7 @@ h2 {
 a {
   text-decoration: none;
   color: var(--dark-blue);
+  display: block;
 }
 
 .projects p:hover, .projects p.focused {
