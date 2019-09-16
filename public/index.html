@@ -17,12 +17,32 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Work+Sans:400,700&display=swap" rel="stylesheet">
     <title>Marin d'Assignies - Portfolio</title>
+    <style>
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #fffbf2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        font-family: 'Playfair Display', serif;
+        color: #4354C8;
+        z-index: 100;
+      }
+    </style>
   </head>
   <body>
     <noscript>
       <strong>Sorry this website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+
+    <div class="loader"><div class="js-loader"><span class="js-loader-counter">0</span>%</div></div>
     <div id="app"></div>
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=CustomEvent"></script>
     <!-- built files will be auto injected -->
   </body>
 </html>

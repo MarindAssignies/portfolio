@@ -88,19 +88,30 @@ export default {
         // Tweenmax.set(this.$refs.title, { opacity: 0 })
         // Tweenmax.set(this.$refs.intro_part, { opacity: 0 })
     },
+    methods: {
+        animateIn() {
+            const tl = new TimelineMax()
+            tl
+                .from(this.$refs.title, 0.6, {
+                    y: "+=200",
+                    opacity: 0,
+                    ease: Power3.easeOut
+                })
+                .staggerFrom(this.$refs.intro.querySelectorAll('div'), 0.6, {
+                    y: "+=200",
+                    opacity: 0,
+                    ease: Power3.easeOut
+                }, 0.2, "-=0.3")
+        }
+    },
     mounted() {
-        const tl = new TimelineMax()
-        tl
-            .from(this.$refs.title, 0.6, {
-                y: "+=200",
-                opacity: 0,
-                ease: Power3.easeOut
+        if (window.appLoaded) {
+            this.animateIn()
+        } else {
+            window.addEventListener('app::loaded', () => {
+                this.animateIn()
             })
-            .staggerFrom(this.$refs.intro.querySelectorAll('div'), 0.6, {
-                y: "+=200",
-                opacity: 0,
-                ease: Power3.easeOut
-            }, 0.2, "-=0.3")
+        }
     },
     beforeDestroy() {
         TweenMax.killAll()

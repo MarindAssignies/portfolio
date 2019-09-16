@@ -61,11 +61,13 @@ export default {
       // _event.target.parentNode.style.transform = 'translateX(15px)'
       this.$refs.projectImg.parentNode.style.width = '300px';
     },
+
     handleTitleLeave(_event){
       this.launchInterval()
       // _event.target.style.transform = 'translateX(0)'
       this.$refs.projectImg.parentNode.style.width = '250px'
     },
+
     launchInterval(){
       this.interval = window.setInterval(() => {
         this.$refs.projectImg.style.opacity = 0
@@ -78,6 +80,24 @@ export default {
           })
         }, 800);
       }, 7000); 
+    },
+
+    animateIn () {
+      const tl = new TimelineMax()
+      tl
+        .staggerFrom(".translate-in", 1, {
+          y: 100,
+          opacity: 0,
+          ease: Power3.easeOut
+        }, 0.1)
+        .from(this.$refs.projectTitle, 1, {
+          y: 100,
+          ease: Power3.easeOut,
+        }, "-=0.7")
+        .from(this.$refs.projectImgContainer, 1, {
+          x: 300,
+          ease: Power3.easeOut 
+        }, "-=0.7")
     }
   },
   beforeMount () {
@@ -88,24 +108,19 @@ export default {
     }
   },
   mounted() {
-    if (window.width > 800) {
-      this.launchInterval()
+    if (window.appLoaded) {
+      if (window.width > 800) {
+        this.launchInterval()
+      }
+      this.animateIn()
+    } else {
+      window.addEventListener('app::loaded', () => {
+        if (window.width > 800) {
+          this.launchInterval()
+        }
+        this.animateIn()
+      })
     }
-    const tl = new TimelineMax()
-    tl
-      .staggerFrom(".translate-in", 1, {
-        y: 100,
-        opacity: 0,
-        ease: Power3.easeOut
-      }, 0.1)
-      .from(this.$refs.projectTitle, 1, {
-        y: 100,
-        ease: Power3.easeOut,
-      }, "-=0.7")
-      .from(this.$refs.projectImgContainer, 1, {
-        x: 300,
-        ease: Power3.easeOut 
-      }, "-=0.7")
   },
   
   beforeDestroy() {

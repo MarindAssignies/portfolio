@@ -14,14 +14,82 @@ import Footer from "@/components/Footer.vue"
 
 import PortfolioContents from "@/assets/portfolio-contents.json"
 
+//assets are all images present on the homepage
+const assets = [
+  'thumbnail-warpcoreaudio.jpg',
+  'thumbnail-mayileave.png',
+  'thumbnail-alphacomposite.jpg',
+  'thumbnail-sohetic.png',
+  'project-warpcoreaudio.png',
+  'project-mayileave.png',
+  'project-alphacomposite.jpg',
+  'project-sohetic.png'
+]
+
+let loadedAssets = 0
+let assetErrors = 0
+
 export default{
   components: {
     Header,
     Footer
   },
+
   data () {
     return {
       portfolio_contents: PortfolioContents
+    }
+  },
+
+  mounted () {
+    this.loadAssets();
+  },
+
+  methods: {
+    loadAssets () {
+      const $counter = document.querySelector('.js-loader-counter')
+      const counter = { value: 0 }
+      for (const _asset of assets) {
+        const image = new Image()
+        image.addEventListener('load', () => {
+          loadedAssets++
+          TweenMax.to(counter, 1, {
+            value: Math.floor((loadedAssets + assetErrors) / assets.length * 100),
+            onUpdate: () => {
+              $counter.textContent = Math.floor(counter.value)
+            },
+            onComplete: () => {
+              if ((loadedAssets + assetErrors) === assets.length) {
+                TweenMax.delayedCall(1, 
+                  () => {
+                    const $loader = document.querySelector('.loader')
+                    const $counter = document.querySelector('.js-loader')
+
+                    window.appLoaded = true
+                    const event = new CustomEvent('app::loaded')
+
+                    const tl = new TimelineMax({ onComplete: () => {
+                      window.dispatchEvent(event)
+                    }})
+                      .to($counter, 0.5, {
+                        y: 100,
+                        autoAlpha: 0
+                      })
+                      .set($loader, {
+                        autoAlpha: 0
+                      })
+                  }
+                )
+              }
+            }
+          })
+        })
+        image.addEventListener('error', () => {
+          assetErrors++
+          console.error(`Could not load asset ${ _asset }`)
+        })
+        image.src = require(`./assets/img/${ _asset }`)
+      }
     }
   }
 }

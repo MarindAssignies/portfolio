@@ -99,16 +99,28 @@ export default {
             experiences: this.$parent.portfolio_contents.experiences
         }
     },
+
+    methods: {
+        animateIn() {
+            TweenMax.staggerFrom('.translate-in', 0.9, {
+                yPercent: 100,
+                opacity: 0,
+                ease: Power3.easeOut
+            }, 0.1)
+            TweenMax.from('.fade-in', 0.9, {
+                opacity: 0,
+                ease: Power3.easeOut
+            })
+        }
+    },
     mounted() {
-        TweenMax.staggerFrom('.translate-in', 0.9, {
-            yPercent: 100,
-            opacity: 0,
-            ease: Power3.easeOut
-        }, 0.1)
-        TweenMax.from('.fade-in', 0.9, {
-            opacity: 0,
-            ease: Power3.easeOut
-        })
+        if (window.appLoaded) {
+            this.animateIn()
+        } else {
+            window.addEventListener('app::loaded', () => {
+                this.animateIn()
+            })
+        }
     },
     beforeRouteLeave (to, from, next) {
         const tl = new TimelineMax({ onComplete: () => {
