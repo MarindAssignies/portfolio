@@ -25,6 +25,10 @@ export default new Router({
       path: '/projects/:slug',
       name: 'project',
       component: () => import('./views/Project.vue')
+    },
+    {
+      path: '/projects',
+      redirect: '/'
     }
   ],
   scrollBehavior (to, from, savedPosition) {
