@@ -3,11 +3,9 @@
     <div class="container fade-on-leave">
       <div class="flex-container">
         <div class="intro">
-          <h2 class="line-before blue translate-in">Hello there</h2>
-          <p class="translate-in">I'm Marin, a 21 years old french product owner studying at HETIC in Paris, always focused on work. I feel
-            happy
-            when my teammates are proud of our creations. 😊</p>
-          <p class="translate-in">I'm also working in Freelance, I can help you handle your projects, feel free to contact me !</p>
+          <h2 class="line-before blue translate-in">Hello there 👋</h2>
+          <p class="translate-in">I'm Marin, a 21 years old french business developer studying at HETIC in Paris, always focused on work. I feel good when my teammates are proud of our creations.</p>
+          <p class="translate-in">I'm also working in freelance as project manager, I can help you handle your projects, feel free to contact me !</p>
           <p class="incentive translate-in">Take a look at my projects <svg width="27" height="13" viewBox="0 0 27 13" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path d="M25 6.5H1" stroke="#33374F" stroke-width="2" stroke-linecap="square" />

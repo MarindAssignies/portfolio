@@ -16,12 +16,12 @@ import PortfolioContents from "@/assets/portfolio-contents.json"
 
 //assets are all images present on the homepage
 const assets = [
+  'thumbnail-idalgo.png',
   'thumbnail-warpcoreaudio.jpg',
-  'thumbnail-mayileave.png',
   'thumbnail-alphacomposite.jpg',
   'thumbnail-sohetic.png',
+  'project-idalgo.jpg',
   'project-warpcoreaudio.png',
-  'project-mayileave.png',
   'project-alphacomposite.jpg',
   'project-sohetic.png'
 ]

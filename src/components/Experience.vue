@@ -1,7 +1,7 @@
 <template>
     <div class="experience">
         <p class="line-before blue intro-title">{{ dates }}</p>
-        <p><strong>{{ title }}</strong> {{description}}</p>
+        <p><strong>{{ title }}</strong></p><p> {{description}}</p>
     </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
     <div class="description">
         <h3>{{ title }}</h3>
-        <p>{{ paragraph }}</p>
+        <p v-html="paragraph" />
     </div>
 </template>
 

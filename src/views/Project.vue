@@ -11,7 +11,7 @@
                     <p>{{project.role}}</p>
                 </div>
                 <div>
-                    <p class="line-before blue intro-title">❤️ Why I enjoyed it</p>
+                    <p class="line-before blue intro-title">👌 Why I enjoyed it</p>
                     <p>{{project.why}}</p>
                 </div>
                 <div>
@@ -35,9 +35,7 @@
                     </div>
                     <div class="conclusion-text">
                         <h3>{{project.conclusion.title}}</h3>
-                        <p>
-                            {{project.conclusion.content}}
-                        </p>
+                        <p v-html="project.conclusion.content" />
                     </div>
                 </div>
             </div>

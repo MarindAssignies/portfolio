@@ -2,19 +2,57 @@
     "projects":
         [
             {
+                "title": "iDalgo",
+                "slug": "idalgo",
+                "thumbnail": "thumbnail-idalgo.png",
+                "project_img": "project-idalgo.jpg",
+                "intro_img": "intro-idalgo.jpg",
+                "role": "Business Developer",
+                "why": "Discovery of the sport business",
+                "when": "June to October 2019",
+                "quote": "I wish everyone to join such an instructive and formative agency",
+                "contents": [
+                    {
+                        "title": "Summer internship",
+                        "paragraph": "I interned as a Business Developer from June to October 2018 at <a href='https://www.idalgo.fr' target='blank' rel='noopener'>iDalgo</a>, a digital and press agency specialized in sports. Based in Paris, iDalgo produces content adapted for nearly thirty sports and supports the media, brands, federations and sports professionals in the creation and management of their digital content strategy.</p><p> With a team of 15 people and an editorial pole of 40 sports journalists, iDalgo manages to make a turnover of 1 550 000 € in the year 2018.</p><p>During my internship, I belonged to the business center, the objective of this team is to prospect new markets, to meet new customers, to demonstrate products while developing the network of the agency and contact with companies."
+                    },
+                    {
+                        "title": "Scorecast",
+                        "paragraph": "My main mission was to develop Scorecast, a multi-sport forecasting platform for companies, on the international market for the 2019 Rugby World Cup. IDalgo's offer to companies an online platform, secure, private and personalized to the image of the company to allow their workforce to predict and animate the life of the office during this period.</p><p>We have prospected territories conducive to the craze of rugby, New Zealand, Australia, South Africa, Argentina, the 4 nations of the United Kingdom and of course France."
+                    },
+                    {
+                        "title": "Communication",
+                        "paragraph": "To further focus the strategy in digital communication, we have framed the realization of a Scorecast presentation video in motion design. I participated in the development of a storyboard, meetings with the designer and returns. I also worked on a light redesign of the platform's BtoB homepage to adapt it for Rugby World Cup. </p><p>The goal was to communicate on our social networks to reach our contacts. You can find the video <a href='https://www.linkedin.com/posts/marin-dassignies_rugbyworldcup-activity-6575743636032626688--siA' target='_blank' rel='noopener'>here</a> 👈"
+                    },
+                    {
+                        "title": "Calls for tenders",
+                        "paragraph": "Scorecast is not the main source of revenue for the company, I was also able to participate in the reflection, writing and formatting of several responses to calls for tenders. I worked on two public tenders for France Télévisions, the first to provide datas for the Tokyo 2020 Olympic Games, the second for the delivery of a live-text tool.</p><p>In order to respond to the customer's request, we had to write a presentation of the company, our projects, our reference customers as well as a technical response and a schedule spread over one year. Thus, creating a responsive response, changing the environment by studying different products, and working with other departments of the company really made me move a step in the reflection and understanding of the strategy of a digital agency."
+                    }
+                ],
+                "conclusion": {
+                    "title": "Experience",
+                    "content": "I learned a lot from the iDalgo sales team; it was a very rewarding and very formative experience. I explored the economics of sport and discovered new ways of working.</p><p>By entrusting me with projects and important files to manage, they allowed me to really realize the importance of the commercial aspect within a digital agency. In addition, by working in a digital agency and press agency, I was able to work on a wide variety of tasks, such as tenders or communication operations, and challenge my different abilities, such as marketing or design.",
+                    "img": "outro-idalgo.png"
+                },
+                "next_project": {
+                    "slug": "warpcore-audio",
+                    "thumbnail": "project-warpcoreaudio.png"
+                }
+            },
+            {
                 "title": "WarpCore Audio",
                 "slug": "warpcore-audio",
                 "thumbnail": "thumbnail-warpcoreaudio.jpg",
                 "project_img": "project-warpcoreaudio.png",
                 "intro_img": "intro-warpcoreaudio.png",
                 "role": "Project Manager",
-                "why": "Our client was very satisfied of our work",
+                "why": "First website for a client",
                 "when": "June 2018",
                 "quote": "Creating a website faithfull to the company",
                 "contents": [
                     {
-                        "title": "Our first website",
-                        "paragraph": "It was our first school project with a real company. We had 2 months to find a company without any website, and create one from scratch including specification, analysis, design, SEO & user’s tests. WarpCore Audio, a Parisian recording studio, trusted us to carry out their first steps on the internet."
+                        "title": "School project",
+                        "paragraph": "It was our first school project with a real company. We had 2 months to find a company without any website, and create one from scratch including specification, analysis, design, SEO & user’s tests.</p><p><a href='https://www.warpcore-audio.fr' target='blank' rel='noopener'>WarpCore Audio</a>, a Parisian recording studio, trusted us to carry out their first steps on the internet."
                     },
                     {
                         "title": "Keeping the identity of the company",
@@ -26,7 +64,7 @@
                     }
                 ],
                 "conclusion": {
-                    "title": "Proud of the team",
+                    "title": "A useful project",
                     "content": "The company was very happy with the result and the way we managed the project. We were happy with our result and our good team work. It was our first challenge together and as everyone, it scared us but thanks to our team spirit we reach our objective.",
                     "img": "outro-warpcoreaudio.png"
                 },
@@ -42,13 +80,13 @@
                 "project_img": "project-sohetic.png",
                 "intro_img": "intro-sohetic.png",
                 "role": "Event Manager",
-                "why": "Organizing events that please the students was a real challenge",
+                "why": "Organizing events was a real challenge",
                 "when": "2018 - 2019",
-                "quote": "Animating the life of 1300 students ",
+                "quote": "Animating the everiday life of 1300 students ",
                 "contents": [
                     {
                         "title": "A new challenge",
-                        "paragraph": "My challenge for my second year at HETIC was to take part in associative life of the school ! That's why I joined the student office. Our mission was to animate the life of the 1300 students with events, contests and more ... I was in charge of events at So'HETIC during one year. Thanks to our team spirit we made a lot of events."
+                        "paragraph": "My challenge for my second year at HETIC was to take part in associative life of the school ! That's why I joined the student office. Our mission was to animate the life of the 1300 students with events, contests and more.</p><p> I was in charge of events at So'HETIC during one year. Thanks to our team spirit we made a lot of events."
                     },
                     {
                         "title": "A lot of party-planning",
@@ -64,43 +102,9 @@
                     }
                 ],
                 "conclusion": {
-                    "title": "It was a real challenge",
+                    "title": "I like this challenge",
                     "content": "For a little more than a year we have animated student life, it is difficult to satisfy everyone. With the innovations we brought, we motivated students to take action by creating new associations to enliven school life!",
                     "img": "outro-sohetic.png"
-                },
-                "next_project": {
-                    "slug": "may-i-leave",
-                    "thumbnail": "project-mayileave.png"
-                }
-            },
-            {
-                "title": "May I Leave?",
-                "slug": "may-i-leave",
-                "thumbnail": "thumbnail-mayileave.png",
-                "project_img": "project-mayileave.png",
-                "intro_img": "intro-mayileave.png",
-                "role": "Product Owner",
-                "why": "Challenging our team on a unknown subject",
-                "when": "December 2018",
-                "quote": "An immersive experience to understand the BREXIT",
-                "contents": [
-                    {
-                        "title": "Human & Economy",
-                        "paragraph": "This project was a school team work challenge which lasted for 10 intensive days. We had to create a digital tool to answer the subject \"Human & Economy\". We chose a topic everyone has heard about but no one really understands : \"BREXIT\", more precisely economic issues that such a situation will create. This is an immersive experience to understand and adapt the BREXIT issues to European countries."
-                    },
-                    {
-                        "title": "Research research",
-                        "paragraph": "We studied a lot of financial experts’ forecasts and we adapted the data according to the country. The main objective of this experiment was to determine if according to your answers, you think that it is necessary to leave the European Union or not."
-                    },
-                    {
-                        "title": "Pro Brexit or not ?",
-                        "paragraph": "To create unique experience, we asked specific questions to users. With their results we determined if they were pro or anti BREXIT for their own country. They could see the percentages of people thinking like them and see more details for each question. We added a \"gaming function\" with the choice to play with your mobile phone."
-                    }
-                ],
-                "conclusion": {
-                    "title": "Learn by playing",
-                    "content": "The main objective was to produce a unique experience, but beyond that, we developed our knowledge on the subject and brought a simpler and personal view of the subject to the users.",
-                    "img": "outro-mayileave.jpg"
                 },
                 "next_project": {
                     "slug": "alpha-composite",
@@ -111,12 +115,12 @@
                 "title": "Alpha Composite",
                 "slug": "alpha-composite",
                 "thumbnail": "thumbnail-alphacomposite.jpg",
-                "project_img": "project-alphacomposite.jpg",
+                "project_img": "project-alphacomposite.png",
                 "intro_img": "intro-alphacomposite.jpg",
                 "role": "Marketing Assistant",
-                "why": "First steps in the professional world",
-                "when": "2016 - 2018",
-                "quote": "Meeting customers to advise them and make sells",
+                "why": "First steps in business",
+                "when": "2015 - 2018",
+                "quote": "The ocean is a great place to work",
                 "contents": [
                     {
                         "title": "Boat shows from Paris to La Rochelle",
@@ -137,27 +141,32 @@
                     "img": "outro-alphacomposite.jpg"
                 },
                 "next_project": {
-                    "slug": "warpcore-audio",
-                    "thumbnail": "project-warpcoreaudio.png"
+                    "slug": "idalgo",
+                    "thumbnail": "project-idalgo.png"
                 }
             }
         ],
     "experiences":
         [
             {
-                "dates": "2019 - now",
-                "title": "Freelance",
-                "description": "Marketing and management - Paris"
+                "dates": "January 2019 - now",
+                "title": "Freelance - Marketing and management - Paris",
+                "description": "Project Manager and Consultant"
             },
             {
-                "dates": "2018 - 2019",
-                "title": "So'HETIC",
-                "description": "Event Manager - Paris"
+                "dates": "June - October 2019",
+                "title": "iDalgo - Digital & Media Agency - Paris",
+                "description": "Internship - Business Developer"
+            },
+            {
+                "dates": "April 2018 - May 2019",
+                "title": "So'HETIC - Student office - Paris",
+                "description": "Event Manager"
             },
             {
                 "dates": "2015-2018",
-                "title": "Marine Composite",
-                "description": "Commercial Agent - Vannes"
+                "title": "Marine Composite - Shipyard - Vannes",
+                "description": "Marketing assistant"
             }
         ]
 }
