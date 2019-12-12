@@ -22,7 +22,7 @@ const assets = [
   'thumbnail-sohetic.png',
   'project-idalgo.jpg',
   'project-warpcoreaudio.png',
-  'project-alphacomposite.jpg',
+  'project-alphacomposite.png',
   'project-sohetic.png'
 ]
 
