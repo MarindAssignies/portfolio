@@ -1,7 +1,7 @@
 <template>
     <footer class="container">
         <div>
-            <p>I’m always looking for new opportunities, <a href="mailto:mdassignies@gmail.com">contact me</a> ! </p>
+            <p>I’m always looking for new opportunities, <a href="mailto:mdassignies@gmail.com" @click="fbTrack">contact me</a> ! </p>
         </div>
         <div class="icons">
             <a href="https://twitter.com/digitalsailor_" target="_blank">
@@ -29,6 +29,12 @@
 <script>
     export default {
         name: 'Footer',
+        
+        methods: {
+            fbTrack () {
+                fbq('track', 'Contact');
+            }
+        },
     }
 </script>
 
