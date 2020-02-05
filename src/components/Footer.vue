@@ -32,8 +32,7 @@
         
         methods: {
             fbTrack () {
-                
-                fbq('track', 'Contact');
+                window.fbq('track', 'Contact');
                 console.log('tracking');
             }
         },
