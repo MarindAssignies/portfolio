@@ -32,7 +32,9 @@
         
         methods: {
             fbTrack () {
+                
                 fbq('track', 'Contact');
+                console.log('tracking');
             }
         },
     }
